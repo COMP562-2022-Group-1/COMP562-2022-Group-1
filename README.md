@@ -97,29 +97,27 @@ A better model would have a larger value of ![$\|\textrm{AUC} - 0.5\|$](./imgs/A
 
 [Table 1](#table-1-results-from-evaluating-the-classification-models), the Random Forest model had the highest score for all five metrics used in evaluation. Therefore, the Random Forest model would be the most useful model among the five models for predicting the candidate a person would vote for given the person's response to the United States Online Survey.
 
-In addition to making predictions of the candidate that a voter is most likely to vote for, the models can also be used to identify the most important features that affect the candidate that a person votes for. For example, Figure 1 plots the top 20 most important features used in the Random Forest Classifier.
+In addition to making predictions of the candidate that a voter is most likely to vote for, the models can also be used to identify the most important features that affect the candidate that a person votes for. For example, Figure 1a plots the top 20 most important features used in the Random Forest Classifier. Among the features plotted in the graphs below, the top 3 features are:
+1. `m1`: Speaking in general of the current administration, how would you rate the performance of Donald Trump?
+2. `usvb20`: If the next presidential elections were being held this week, what would you do?
+3. `m2`: Now speaking of Congress, and thinking of members of Congress as a whole, without considering the political parties to which they belong, How well do you believe that the members of Congress are performing their jobs?
 
-### Among the features plotted in the graph below, the top 3 features are:
 
-1. m1: Speaking in general of the current administration, how would you rate the performance of Donald Trump?
-2. usvb20: If the next presidential elections were being held this week, what would you do?
-3. m2: Now speaking of Congress, and thinking of members of Congress as a whole, without considering the political parties to which they belong, How well do you believe that the members of Congress are performing their jobs?
+|             ![Figure 1a](./imgs/Feature%20Importance%20Forest.png)             |
+| :---------------------------------------------------------------------------: |
+| Figure 1a: Top 20 most important features used in the Random Forest Classifier |
 
-|   ![Feature importance](./imgs/Feature%20Importance%20Forest.png)   |
-| :-----------------------------------------------------------------: |
-| Top 20 most important features used in the Random Forest Classifier |
+|            ![Figure 1b](./imgs/Feature%20Importance%20Xgboost.png)             |
+| :---------------------------------------------------------------------------: |
+| Figure 1b: Features with the 20 highest coefficients in the XGBoost Classifier |
 
-|  ![Feature importance](./imgs/Feature%20Importance%20Xgboost.png)   |
-| :-----------------------------------------------------------------: |
-| Features with the 20 highest coefficients in the XGBoost Classifier |
-
-| ![Feature importance](./imgs/Logreg%20Importance%20Hilary.png) |
+|      ![Figure 2a](./imgs/Logreg%20Importance%20Hilary.png)      |
 | :------------------------------------------------------------: |
-|      Features with the 20 highest coefficients for Hilary      |
+| Figure 2a: Features with the 20 highest coefficients for Hilary |
 
-| ![Feature importance](./imgs/Logreg%20Importance%20Trump.png) |
+|      ![Figure 2b](./imgs/Logreg%20Importance%20Trump.png)      |
 | :-----------------------------------------------------------: |
-|      Features with the 20 highest coefficients for Trump      |
+| Figure 2b: Features with the 20 highest coefficients for Trump |
 
 As previously mentioned, these models can be used by the candidates and parties to strategize their election campaigns and optimize their limited resources. Even though the logistic regression performed poorer in all of the performance metrics, it can still be used by each party to observe what demographics their opponents are attracting, and try to garner more swing votes by campaigning for the wants of the people.
 
