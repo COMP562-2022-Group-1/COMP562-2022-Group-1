@@ -1,9 +1,8 @@
 # COMP 562 Project
 
-May 2022
-
 ## Relevant Links
-1. [Project Deployment](comp562-project.herokuapp.com/)
+
+1. [Project Deployment](https://comp562-project.herokuapp.com/)
 2. [Jupyter Notebook](https://comp562-2022-group-1.github.io/Model-Training/)
 3. [Github page](https://github.com/COMP562-2022-Group-1)
 
@@ -41,19 +40,19 @@ The training set has a significantly greater proportion of units with labels 2 a
 
 ## Modelling
 
-#### eXtreme Gradient Boosting Classifier Model
+### eXtreme Gradient Boosting Classifier Model
 
 This ensemble model uses a gradient descent algorithm to minimize the loss function when adding new models to the ensemble. Maximum tree depth of 5 is used to prevent over-fitting. The number of boosting rounds is set to 240 and the learning objective is set to multiclass softprob.
 
-#### Random Forest Classifier Model
+### Random Forest Classifier Model
 
 This model is an ensemble of 200 decision trees of maximum depth 6. The maximum depth prevents the decision trees from over-fitting. The quality of split at each node of a decision tree is determined using entropy.
 
-#### Logistic Regression Model
+### Logistic Regression Model
 
 A logistic function is evaluated on a linear combination of features to compute the probability of a class. The saga solver is used to minimize the multinomial loss within a maximum of 2000 iterations.
 
-#### Ensemble Model
+### Ensemble Model
 
 Uses an ensemble of the XGBoost, Random Forest and Logisitic Regression classifiers. The class label is predicted by summing the predicted probabilities of each label over all models and returning the label with the largest sum.
 
@@ -61,29 +60,29 @@ Uses an ensemble of the XGBoost, Random Forest and Logisitic Regression classifi
 
 The models are evaluated using precision, recall (true positive rate), accuracy, f1 score and Area Under the Receiver Operating Characteristic Curve (AUC).
 
-#### Precision
+### Precision
 
-Precision is the proportion of correctly predicted positive cases to the total number of cases that were predicted as positive. $\textrm{Precision} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FP}}$
+Precision is the proportion of correctly predicted positive cases to the total number of cases that were predicted as positive. ![$\textrm{Precision} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FP}}$](imgs/precision.png)
 
-#### Recall
+### Recall
 
-Recall is the proportion of the positive cases that were correctly predicted. $\textrm{Recall} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}}$
+Recall is the proportion of the positive cases that were correctly predicted. ![$\textrm{Recall} = \frac{\textrm{TP}}{\textrm{TP} + \textrm{FN}}$](./imgs/recall.png)
 
-#### Accuracy
+### Accuracy
 
-Accuracy is the proportion cases that were correctly predicted. $\textrm{Accuracy} = \frac{\textrm{TP} + \textrm{TN}}{\textrm{TP} + \textrm{FN} + \textrm{FP} + \textrm{TN}}$
+Accuracy is the proportion cases that were correctly predicted. ![$\textrm{Accuracy} = \frac{\textrm{TP} + \textrm{TN}}{\textrm{TP} + \textrm{FN} + \textrm{FP} + \textrm{TN}}$](imgs/accuracy.png)
 
-#### F1 Score
+### F1 Score
 
-F1 score is the harmonic mean of the precision and recall. $\textrm{F1 Score} = 2 \times \frac{\textrm{Precision} \times \textrm{Recall}}{\textrm{Precision} + \textrm{Recall}}$
+F1 score is the harmonic mean of the precision and recall. ![$\textrm{F1 Score} = 2 \times \frac{\textrm{Precision} \times \textrm{Recall}}{\textrm{Precision} + \textrm{Recall}}$](./imgs/f1%20score.png)
 
-#### AUC
+### AUC
 
-The Receiver Operating Characteristic (ROC) curve plots recall against false positive rate ($\textrm{FPR} = \frac{\textrm{FP}}{\textrm{FP} + \textrm{TN}}$) for each classification threshold that changes the number of cases predicted as positive. A better model would have a larger value of $|\textrm{AUC} - 0.5|$ which indicates that the model would have a higher recall at any given false positive rate.
+The Receiver Operating Characteristic (ROC) curve plots recall against false positive rate (![$\textrm{FPR} = \frac{\textrm{FP}}{\textrm{FP} + \textrm{TN}}$](./imgs/FPR.png)) for each classification threshold that changes the number of cases predicted as positive. A better model would have a larger value of ![$|\textrm{AUC} - 0.5|$](./imgs/AUC.png) which indicates that the model would have a higher recall at any given false positive rate.
 
 ## Discussion of Results
 
-#### Table 1 (Results from evaluating the classification models)
+### Table 1 (Results from evaluating the classification models)
 
 |        Model        |   AUC   | F1 Score | Accuracy | Precision | Recall  |
 | :-----------------: | :-----: | :------: | :------: | :-------: | :-----: |
