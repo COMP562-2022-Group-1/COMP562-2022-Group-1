@@ -78,7 +78,10 @@ F1 score is the harmonic mean of the precision and recall. ![$\textrm{F1 Score} 
 
 ### AUC
 
-The Receiver Operating Characteristic (ROC) curve plots recall against false positive rate (![$\textrm{FPR} = \frac{\textrm{FP}}{\textrm{FP} + \textrm{TN}}$](./imgs/FPR.png)) for each classification threshold that changes the number of cases predicted as positive. A better model would have a larger value of ![$|\textrm{AUC} - 0.5|$](./imgs/AUC.png) which indicates that the model would have a higher recall at any given false positive rate.
+The Receiver Operating Characteristic (ROC) curve plots recall against false positive rate for each classification threshold that changes the number of cases predicted as positive.
+![$\textrm{FPR} = \frac{\textrm{FP}}{\textrm{FP} + \textrm{TN}}$](./imgs/FPR.png))
+
+A better model would have a larger value of ![$\|\textrm{AUC} - 0.5\|$](./imgs/AUC.png) which indicates that the model would have a higher recall at any given false positive rate.
 
 ## Discussion of Results
 
